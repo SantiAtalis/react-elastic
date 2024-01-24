@@ -103,9 +103,13 @@ function App() {
         body: JSON.stringify({
           "query": {
             "match": {
-              "title": "eos enim sit tenetur quia accusamus nobis animi nesciunt laborum pariatur"
+              "date": "2023-05-27"
+              // "big_text": "eos enim sit tenetur quia accusamus nobis animi nesciunt laborum pariatur"
+              // "title": "eos enim sit tenetur quia accusamus nobis animi nesciunt laborum pariatur"
+              // "small_text": "eos enim sit tenetur quia accusamus nobis animi nesciunt laborum pariatur"
             }
-          }
+          },
+          _source: ["date"]
         }),
       })
       const data = await response.json()
@@ -187,9 +191,9 @@ function App() {
         </div> */}
         <div className="flex flex-col gap-2 w-full">
           <input type="text" className="border rounded-sm p-2 text-slate-800 text-ellipsis" value={search} onChange={handleChange} />
-          <button className=" bg-green-600 py-1 rounded-md" onClick={handleSearch}>Search by title</button>
-          <button className=" bg-green-700 py-1 rounded-md" onClick={handleTitle}>Search by default title</button>
-          <button className=" bg-green-800 py-1 rounded-md" onClick={searchToElasticRemote}>Search by default criteria Elastic Cloud</button>
+          <button className=" bg-green-700 py-1 rounded-md hover:bg-green-500/70 duration-150 ease-linear" onClick={handleSearch}>Search by title</button>
+          <button className=" bg-green-700 py-1 rounded-md hover:bg-green-500/70 duration-150 ease-linear" onClick={handleTitle}>Search by fields</button>
+          {/* <button className=" bg-green-800 py-1 rounded-md" onClick={searchToElasticRemote}>Search by default criteria Elastic Cloud</button> */}
         </div>
         <div className="flex flex-col gap-2 w-full">
           <h2 className="text-2xl font-medium" >Result in ms: <span className={endTime - initialTime <= 300 ? "text-green-400" : "text-red-400"}>{endTime - initialTime}ms</span></h2>
