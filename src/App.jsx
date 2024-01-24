@@ -172,9 +172,9 @@ function App() {
 
 
   return (
-    <main className="flex flex-col justify-start items-center text-slate-50 gap-5">
-      <section className="flex flex-col justify-start items-center gap-5 p-5 w-[40vw] text-wrap">
-        <h1 className="text-slate-300 text-3xl mt-10">React | Elastic</h1>
+    <main className="flex flex-col justify-start items-center text-slate-50 gap-5 w-[90vw] md:w-[75vw] lg:w-[50vw]">
+      <section className="flex flex-col justify-start items-center gap-5 p-5 w-3/4 text-wrap">
+        <h1 className="text-slate-300 text-3xl mt-10 font-semibold">React | Elastic</h1>
         {/* <div className="flex flex-col gap-2 w-full">
           <input type="text" className="border rounded-sm p-2 text-slate-800" onChange={handleChangeUsername} />
           <input type="password" className="border rounded-sm p-2 text-slate-800" onChange={handleChangePassword} />
@@ -186,14 +186,14 @@ function App() {
           <span>{JSON.stringify(user)}</span>
         </div> */}
         <div className="flex flex-col gap-2 w-full">
-          <input type="text" className="border rounded-sm p-2 text-slate-800" value={search} onChange={handleChange} />
-          <button className=" bg-green-600 py-1 rounded-md" onClick={handleSearch}>Searh by title</button>
+          <input type="text" className="border rounded-sm p-2 text-slate-800 text-ellipsis" value={search} onChange={handleChange} />
+          <button className=" bg-green-600 py-1 rounded-md" onClick={handleSearch}>Search by title</button>
           <button className=" bg-green-700 py-1 rounded-md" onClick={handleTitle}>Search by default title</button>
-          <button className=" bg-green-800  00 py-1 rounded-md" onClick={searchToElasticRemote}>Search by default criteria Elastic Cloud</button>
+          <button className=" bg-green-800 py-1 rounded-md" onClick={searchToElasticRemote}>Search by default criteria Elastic Cloud</button>
         </div>
         <div className="flex flex-col gap-2 w-full">
-          <h2>Result in ms: {endTime - initialTime}ms</h2>
-          <span>{JSON.stringify(data)}</span>
+          <h2 className="text-2xl font-medium" >Result in ms: <span className={endTime - initialTime <= 300 ? "text-green-400" : "text-red-400"}>{endTime - initialTime}ms</span></h2>
+          <span className=" text-pretty leading-loose text-yellow-500">{JSON.stringify(data)}</span>
         </div>
       </section>
     </main>
