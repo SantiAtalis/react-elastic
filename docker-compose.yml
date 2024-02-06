@@ -1,22 +1,10 @@
-# version: '3'
-# services:
-#   app:
-#     build: 
-#       context: .
-#       dockerfile: Dockerfile
-#     ports:
-#       - "4000:4000"
-#     command: sh -c "npm run build && PORT=4000 node server.js"
-#     # command: sh -c "PORT=4000 npm start"
-#     # command: sh -c "PORT=4000 npm run dev"
-#     container_name: react-elastic
-
 version: "3.4"
 services:
   vite_docker:
-   image: node:alpine
+   build:
+    context: .
+    dockerfile: Dockerfile
    container_name: react-elastic
-   entrypoint: /bin/sh
    ports:
      - 4000:4000
    working_dir: /srv/app
@@ -24,4 +12,5 @@ services:
      - type: bind
        source: ./
        target: /srv/app
+   command: sh -c "npm i && npm run dev"
    tty: true
