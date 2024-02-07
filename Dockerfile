@@ -16,4 +16,4 @@ RUN npm install
 RUN npm run build
 
 # run build app
-CMD ["npm", "run", "dev"]
+CMD ["node", "server.js"]
