@@ -14,8 +14,9 @@ RUN npm install
 
 # copy your project files to work directory
 RUN npm run build
-RUN npx vite preview
+#RUN npx vite preview 
 
 # run build app
 #CMD ["node", "server.js"]
-CMD ["npm", "run", "dev"]
+#CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "preview"]
