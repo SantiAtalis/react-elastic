@@ -18,5 +18,5 @@ RUN npm run build
 
 # run build app
 #CMD ["node", "server.js"]
-#CMD ["npm", "run", "dev"]
-CMD ["npm", "run", "preview"]
+CMD ["npm", "run", "dev"]
+#CMD ["npm", "run", "preview"]
