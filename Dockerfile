@@ -16,7 +16,8 @@ RUN npm install
 RUN npm run build
 #RUN npx vite preview 
 
+RUN npm run dev
 # run build app
 #CMD ["node", "server.js"]
-CMD ["npm", "run", "dev"]
+#CMD ["npm", "run", "dev"]
 #CMD ["npm", "run", "preview"]
