@@ -17,4 +17,4 @@ RUN npm run build
 EXPOSE 5002
 
 # run build app
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "preview"]
