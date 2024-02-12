@@ -14,7 +14,7 @@ RUN npm install
 RUN npm run build
 
 # expose the port that will use
-EXPOSE 5000
+EXPOSE 5002
 
 # run build app
 CMD ["npm", "run", "dev"]
